@@ -7,7 +7,9 @@ import java.util.TimerTask;
 
 
 public class TimeController {
-
+    public interface Subscriber {
+        void noMsgCome();
+    }
     private static class Timely{
         ArrayList<Subscriber> tasks;
         Timer timer;

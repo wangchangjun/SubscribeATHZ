@@ -6,12 +6,15 @@ import java.util.UUID;
 
 
 public class MsgController {
+    public interface Subscriber {
+        void noMsgCome(Object content);
+    }
     HashMap<UUID, ArrayList<Subscriber>> tasks = new HashMap<>();
-    public void trigger(UUID msgId){
+    public void trigger(UUID msgId, Object content){
         ArrayList<Subscriber> ss = tasks.get(msgId);
         if(ss != null){
             for(Subscriber s: ss)
-                s.noMsgCome();
+                s.noMsgCome(content);
         }
     }
     public void add(UUID msgId, Subscriber subscriber){
