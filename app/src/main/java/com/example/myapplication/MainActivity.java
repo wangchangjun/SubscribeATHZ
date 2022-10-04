@@ -62,10 +62,4 @@ public class MainActivity extends AppCompatActivity {
         btn6.setOnClickListener(view -> mctrl.trigger(Msg5.id, "I am Msg5"));
     }
 
-    void onButtonAdd1(View view){
-
-    }
-    void onButtonAdd2(View view){
-
-    }
 }
